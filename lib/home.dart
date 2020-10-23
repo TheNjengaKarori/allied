@@ -1,8 +1,10 @@
-import 'package:allied/categories/housing.dart';
+
+import 'package:allied/categories/vehicle..dart';
 import 'package:allied/claim.dart';
 import 'package:allied/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -78,16 +80,16 @@ class _HomeState extends State<Home> {
               onPressed: (){
                  Navigator.push(context, 
                 MaterialPageRoute(builder: (context)
-                    => Housing(),
+                    => Vehicle(),
                  ),
                    );
                 },
               child: Column(
                 children:<Widget>[
-                  Icon(Icons.home,
+                  Icon(Icons.directions_car,
                   color: Colors.blueAccent[400],
                   size: 40.0,),
-                  Text('Housing',
+                  Text('Vehicle',
                   style: GoogleFonts.montserrat(
                     color:Colors.blueAccent[400]
                   ),)
@@ -112,10 +114,10 @@ class _HomeState extends State<Home> {
               onPressed: null, 
               child: Column(
                 children:<Widget>[
-                  Icon(Icons.directions_car,
+                  Icon(Icons.home,
                   color: Colors.blueAccent[400],
                   size: 40.0,),
-                  Text('Vehicle',
+                  Text('Building',
                   style: GoogleFonts.montserrat(
                     color:Colors.blueAccent[400]
                   ),)

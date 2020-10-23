@@ -1,5 +1,6 @@
 
 import 'package:allied/alert.dart';
+import 'package:allied/browse.dart';
 import 'package:allied/compare.dart';
 import 'package:allied/contacts/contact.dart';
 import 'package:allied/home.dart';
@@ -16,8 +17,8 @@ class _BottomNavState extends State<BottomNav> {
    int _currentIndex = 0;
    final List<Widget> _children = [
      Home(),
-     Compare(),
      Alert(),
+     Browse(),
      Contact()
      
    ];
@@ -45,19 +46,19 @@ class _BottomNavState extends State<BottomNav> {
               [
                 BottomNavigationBarItem(
                   icon: Icon(Icons.home),
-                  title: Text('Home'),
-                  ),
-                  BottomNavigationBarItem(
-                  icon: Icon(Icons.list),
-                  title: Text('Compare')
+                  label: ('Home'),
                   ),
                   BottomNavigationBarItem(
                   icon: Icon(Icons.notifications_none),
-                  title: Text('Notification')
+                  label: ('Notification')
+                  ),
+                  BottomNavigationBarItem(
+                  icon: Icon(Icons.list),
+                  label: ('Browse')
                   ),
                    BottomNavigationBarItem(
                   icon: Icon(Icons.phone_in_talk),
-                  title: Text('Contact Us')
+                  label: ('Contact Us')
                   ),
                   
               ],

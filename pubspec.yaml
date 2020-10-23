@@ -32,6 +32,8 @@ dependencies:
   flutter_phone_direct_caller: ^1.0.1
   url_launcher: ^5.7.4
   get_it: ^5.0.1
+  flutter_form_builder: ^3.14.0
+  font_awesome_flutter: ^8.10.0
 
 dev_dependencies:
   flutter_test:

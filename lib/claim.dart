@@ -1,4 +1,4 @@
-import 'package:allied/categories/housing.dart';
+
 import 'package:allied/history.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -64,11 +64,6 @@ class _ClaimState extends State<Claim> {
             children: <Widget>[
             FlatButton(
               onPressed: (){
-                 Navigator.push(context, 
-                MaterialPageRoute(builder: (context)
-                    => Housing(),
-                 ),
-                   );
                 },
               child: Column(
                 children:<Widget>[

@@ -231,8 +231,8 @@ class _OnboardingState extends State<Onboarding> {
                                 ),
                                 SizedBox(width:10.0),
                                 Icon(
-                                  Icons.arrow_forward,
-                                  color:Colors.white,
+                                  Icons.arrow_forward_ios ,
+                                  color:Colors.blueAccent[400],
                                   size:30.0
                                 )
                               ]
