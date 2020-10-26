@@ -1,4 +1,5 @@
 
+import 'package:allied/categories/property.dart';
 import 'package:allied/categories/vehicle..dart';
 import 'package:allied/claim.dart';
 import 'package:allied/medical.dart';
@@ -118,13 +119,19 @@ class _HomeState extends State<Home> {
               ),
               ),
               FlatButton(
-              onPressed: null, 
+              onPressed:  (){
+                 Navigator.push(context, 
+                MaterialPageRoute(builder: (context)
+                    => Property(),
+                 ),
+                   );
+                },  
               child: Column(
                 children:<Widget>[
-                  FaIcon(FontAwesomeIcons.building,  
+                  FaIcon(FontAwesomeIcons.home,  
           color: Colors.blueAccent[400],size:40
           ),
-                  Text('Building',
+                  Text('Property',
                   style: GoogleFonts.montserrat(
                     color:Colors.blueAccent[400]
                   ),)
