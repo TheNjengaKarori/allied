@@ -27,13 +27,11 @@ class _ProfileState extends State<Profile> {
       body: ListView(
         padding: const EdgeInsets.all(40),
         children: [
-          CircleAvatar(
-             backgroundColor: Colors.blueAccent[400],
-            child:FaIcon(FontAwesomeIcons.user ,
-          color: Colors.white,
-          size: 40,
+          Center(
+          child:FaIcon(FontAwesomeIcons.userCircle ,
+          color: Colors.blueAccent[400],
+          size: 120,
           ),
-          radius: 50,
           ),
           SizedBox(height:40),
           ExpansionTile(

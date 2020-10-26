@@ -1,6 +1,7 @@
 
 import 'package:allied/categories/vehicle..dart';
 import 'package:allied/claim.dart';
+import 'package:allied/medical.dart';
 import 'package:allied/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -86,9 +87,9 @@ class _HomeState extends State<Home> {
                 },
               child: Column(
                 children:<Widget>[
-                  Icon(Icons.directions_car,
-                  color: Colors.blueAccent[400],
-                  size: 40.0,),
+                    FaIcon(FontAwesomeIcons.carAlt,  
+          color: Colors.blueAccent[400],size:40
+          ),
                   Text('Vehicle',
                   style: GoogleFonts.montserrat(
                     color:Colors.blueAccent[400]
@@ -97,12 +98,18 @@ class _HomeState extends State<Home> {
               ),
               ),
               FlatButton(
-              onPressed: null, 
+               onPressed: (){
+                 Navigator.push(context, 
+                MaterialPageRoute(builder: (context)
+                    => Medical(),
+                 ),
+                   );
+                }, 
               child: Column(
                 children:<Widget>[
-                  Icon(Icons.local_hospital,
-                  color: Colors.blueAccent[400],
-                  size: 40.0,),
+                  FaIcon(FontAwesomeIcons.firstAid,  
+          color: Colors.blueAccent[400],size:40
+          ),
                   Text('Medical',
                   style: GoogleFonts.montserrat(
                     color:Colors.blueAccent[400]
@@ -114,9 +121,9 @@ class _HomeState extends State<Home> {
               onPressed: null, 
               child: Column(
                 children:<Widget>[
-                  Icon(Icons.home,
-                  color: Colors.blueAccent[400],
-                  size: 40.0,),
+                  FaIcon(FontAwesomeIcons.building,  
+          color: Colors.blueAccent[400],size:40
+          ),
                   Text('Building',
                   style: GoogleFonts.montserrat(
                     color:Colors.blueAccent[400]
@@ -134,9 +141,9 @@ class _HomeState extends State<Home> {
               onPressed: null, 
               child: Column(
                 children:<Widget>[
-                  Icon(Icons.accessibility_new,
-                  color: Colors.blueAccent[400],
-                  size: 40.0,),
+                  FaIcon(FontAwesomeIcons.heartbeat,  
+          color: Colors.blueAccent[400],size:40
+          ),
                   Text('Life',
                   style: GoogleFonts.montserrat(
                     color:Colors.blueAccent[400]
@@ -148,9 +155,9 @@ class _HomeState extends State<Home> {
               onPressed: null, 
               child: Column(
                 children:<Widget>[
-                  Icon(Icons.directions_boat,
-                  color: Colors.blueAccent[400],
-                  size: 40.0,),
+                   FaIcon(FontAwesomeIcons.anchor,  
+          color: Colors.blueAccent[400],size:40
+          ),
                   Text('Marine',
                   style: GoogleFonts.montserrat(
                     color:Colors.blueAccent[400]
@@ -162,9 +169,9 @@ class _HomeState extends State<Home> {
               onPressed: null, 
               child: Column(
                 children:<Widget>[
-                  Icon(Icons.flight_takeoff,
-                  color: Colors.blueAccent[400],
-                  size: 40.0,),
+                  FaIcon(FontAwesomeIcons.route,  
+          color: Colors.blueAccent[400],size:40
+          ),
                   Text('Travel',
                   style: GoogleFonts.montserrat(
                     color:Colors.blueAccent[400]
@@ -182,9 +189,9 @@ class _HomeState extends State<Home> {
               onPressed: null, 
               child: Column(
                 children:<Widget>[
-                  Icon(Icons.folder,
-                  color: Colors.blueAccent[400],
-                  size: 40.0,),
+                  FaIcon(FontAwesomeIcons.warehouse,  
+          color: Colors.blueAccent[400],size:40
+          ),
                   Text('Assets',
                   style: GoogleFonts.montserrat(
                     color:Colors.blueAccent[400]
@@ -196,9 +203,9 @@ class _HomeState extends State<Home> {
               onPressed: null, 
               child: Column(
                 children:<Widget>[
-                  Icon(Icons.laptop_windows,
-                  color: Colors.blueAccent[400],
-                  size: 40.0,),
+                  FaIcon(FontAwesomeIcons.laptop,  
+          color: Colors.blueAccent[400],size:40
+          ),
                   Text('Electronics',
                   style: GoogleFonts.montserrat(
                     color:Colors.blueAccent[400]
@@ -210,9 +217,9 @@ class _HomeState extends State<Home> {
               onPressed: null, 
               child: Column(
                 children:<Widget>[
-                  Icon(Icons.store,
-                  color: Colors.blueAccent[400],
-                  size: 40.0,),
+                  FaIcon(FontAwesomeIcons.briefcase,  
+          color: Colors.blueAccent[400],size:40
+          ),
                   Text('Business',
                   style: GoogleFonts.montserrat(
                     color:Colors.blueAccent[400]

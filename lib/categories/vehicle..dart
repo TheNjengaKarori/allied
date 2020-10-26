@@ -107,8 +107,8 @@ class _VehicleState extends State<Vehicle> {
        TextFormField(
         decoration: InputDecoration(
           hintText: ('Sunny'),
-            hintStyle: TextStyle( color:Colors.blueAccent[400]..withOpacity(0.6),fontStyle: FontStyle.italic),
-          icon:Icon(Icons.directions_car,
+            hintStyle: TextStyle( color:Colors.blueAccent[400].withOpacity(0.6),fontStyle: FontStyle.italic),
+           icon:FaIcon(FontAwesomeIcons.carAlt,  
           color: Colors.blueAccent[400]
           ),
           labelText: "Model of the car",
@@ -471,7 +471,7 @@ class _VehicleState extends State<Vehicle> {
                 },
                 child: Text('Search',
                 style:GoogleFonts.montserrat(
-                  color:Colors.white
+                  color:Colors.white        
                 )),
               ),
             )
@@ -481,3 +481,4 @@ class _VehicleState extends State<Vehicle> {
       );
   }
 }
+ 
