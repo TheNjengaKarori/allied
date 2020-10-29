@@ -1,5 +1,7 @@
 
+import 'package:allied/categories/life.dart';
 import 'package:allied/categories/property.dart';
+import 'package:allied/categories/travel.dart';
 import 'package:allied/categories/vehicle..dart';
 import 'package:allied/claim.dart';
 import 'package:allied/medical.dart';
@@ -145,7 +147,13 @@ class _HomeState extends State<Home> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
             FlatButton(
-              onPressed: null, 
+              onPressed: (){
+                 Navigator.push(context, 
+                MaterialPageRoute(builder: (context)
+                    => Life(),
+                 ),
+                   );
+                },
               child: Column(
                 children:<Widget>[
                   FaIcon(FontAwesomeIcons.heartbeat,  
@@ -173,7 +181,13 @@ class _HomeState extends State<Home> {
               ),
               ),
               FlatButton(
-              onPressed: null, 
+              onPressed:  (){
+                 Navigator.push(context, 
+                MaterialPageRoute(builder: (context)
+                    => Travel(),
+                 ),
+                   );
+                },
               child: Column(
                 children:<Widget>[
                   FaIcon(FontAwesomeIcons.route,  

@@ -5,17 +5,33 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Property extends StatefulWidget {
+class Travel extends StatefulWidget {
   @override
-  _PropertyState createState() => _PropertyState();
+  _TravelState createState() => _TravelState();
 }
 
-class _PropertyState extends State<Property> {
+class _TravelState extends State<Travel> {
 
-  var _property =[ 
-    "Private",
-    "Commercial",
+  var _continent =[
+    "Africa",
+    "Asia",
+    "Europe",
+    "North America",
+    "South America",
+    "Australia\New Zealand",
   ];
+
+  var _travelling =[
+    "Individual",
+    "Student"
+  ];
+
+  var _purpose =[
+    "holiday",
+    "business"
+  ];
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +39,7 @@ class _PropertyState extends State<Property> {
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(
         backgroundColor:Colors.white,
-        title:Text('Property Insurance',
+        title:Text('Travel Insurance',
         style: GoogleFonts.montserrat(
           color:Colors.blueAccent[400]
         ),
@@ -32,45 +48,85 @@ class _PropertyState extends State<Property> {
         elevation:0.0,
       ),
       body: ListView(
-        padding: const EdgeInsets.all(40),
+         padding: const EdgeInsets.all(40),
         children: [
-         Image.asset( 
-          'assets/home.png',
+        Image.asset( 
+          'assets/Travel.png',
           fit: BoxFit.cover,
         ),
-        Column(
-          children: [
-            FormBuilder( 
-           child: Column(children: [
-             FormBuilderDropdown(
-        attribute: 'property',
+         SizedBox(height:30),
+         FormBuilderDropdown(
+        attribute: 'Destination',
+        decoration: InputDecoration(
+          icon:FaIcon(FontAwesomeIcons.baby,
+          color: Colors.blueAccent[400]
+          ),
+          labelText: 'Destination',
+         labelStyle: GoogleFonts.montserrat(
+            color: Colors.blueAccent[400]
+          ),
+           hintText: "",
+           hintStyle: TextStyle( color:Colors.blueAccent[400].withOpacity(0.6),fontStyle: FontStyle.italic)
+        ),
+        
+        items: _continent.map((_continent) => DropdownMenuItem( 
+          value: _continent,
+          child: Text('$_continent'),
+        )).toList()
+        ),
+         SizedBox(height:30),
+         FormBuilderDropdown(
+        attribute: 'Travelling',
+        decoration: InputDecoration(
+          icon:FaIcon(FontAwesomeIcons.piggyBank,
+          color: Colors.blueAccent[400]
+          ),
+          labelText: 'Who is travelling?',
+         labelStyle: GoogleFonts.montserrat(
+            color: Colors.blueAccent[400]
+          ),
+           hintText: "",
+           hintStyle: TextStyle( color:Colors.blueAccent[400].withOpacity(0.6),fontStyle: FontStyle.italic)
+        ),
+        
+        items: _travelling.map((_travelling) => DropdownMenuItem( 
+          value: _travelling,
+          child: Text('$_travelling'),
+        )).toList()
+        ),
+         SizedBox(height:30),
+         FormBuilderDropdown(
+        attribute: '',
         decoration: InputDecoration(
           icon:FaIcon(FontAwesomeIcons.home,
           color: Colors.blueAccent[400]
           ),
-          labelText: 'Type of Property',
+          labelText: 'Purpose of travel?',
          labelStyle: GoogleFonts.montserrat(
             color: Colors.blueAccent[400]
           ),
-           hintText: "Private",
+           hintText: "",
            hintStyle: TextStyle( color:Colors.blueAccent[400].withOpacity(0.6),fontStyle: FontStyle.italic)
         ),
         
-        items: _property.map((_property) => DropdownMenuItem( 
-          value: _property,
-          child: Text('$_property'),
+        items: _purpose.map((_purpose) => DropdownMenuItem( 
+          value: _purpose,
+          child: Text('$_purpose'),
         )).toList()
         ),
-        SizedBox(height:40),
-         TextFormField(
+         SizedBox(height:40),
+         Center( 
+             child: TextFormField(
         decoration: InputDecoration(
-         icon:FaIcon(FontAwesomeIcons.dollarSign,
+           icon:FaIcon(FontAwesomeIcons.moneyBillWaveAlt,
           color: Colors.blueAccent[400]
           ),
-          labelText: "Value of the property",
+          labelText: "Days of Travel",
           labelStyle: GoogleFonts.montserrat(
             color: Colors.blueAccent[400]
           ),
+          hintText: ('5 days'),
+          hintStyle: TextStyle( color:Colors.blueAccent[400].withOpacity(0.6),fontStyle: FontStyle.italic),
           fillColor: Colors.blueAccent[400],
           focusedBorder:OutlineInputBorder(
             borderSide: const BorderSide(
@@ -79,32 +135,10 @@ class _PropertyState extends State<Property> {
             borderRadius: BorderRadius.circular(25.0),
           ),
         ),
-         keyboardType:TextInputType.datetime,
+         keyboardType:TextInputType.number,
         inputFormatters: [FilteringTextInputFormatter.digitsOnly],
       ),
-      SizedBox(height:40),
-         TextFormField(
-        decoration: InputDecoration(
-         icon:FaIcon(FontAwesomeIcons.dollarSign,
-          color: Colors.blueAccent[400]
-          ),
-          labelText: "Value of the contents in the Property (TV,Furniture, jewelery,etc)",
-          labelStyle: GoogleFonts.montserrat(
-            color: Colors.blueAccent[400]
-          ),
-          fillColor: Colors.blueAccent[400],
-          focusedBorder:OutlineInputBorder(
-            borderSide: const BorderSide(
-              color: Colors.blueAccent, 
-              width: 2.0),
-            borderRadius: BorderRadius.circular(25.0),
-          ),
-        ),
-         keyboardType:TextInputType.datetime,
-        inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-      ),
-
-      SizedBox(height: 40,),
+           ),
     Center(
             child:ButtonTheme( 
               minWidth:110.0,
@@ -127,12 +161,8 @@ class _PropertyState extends State<Property> {
                 )),
               ),
             )
-          ) 
-           ],), 
-          )
-          ],
-          
-        )
+          ) ,
+          SizedBox(height:50),
       ],),
     );
   }

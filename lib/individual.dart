@@ -93,7 +93,11 @@ DateTime.now();
         SizedBox(height:40,),
        Column(
          children: [
-           Text('Date of Birth'),
+           Text('Date of Birth',
+           style:  GoogleFonts.montserrat(
+            color: Colors.blueAccent[400]
+           )),
+           SizedBox(height:15,),
            Container( 
              height: 150,
              child: CupertinoDatePicker(

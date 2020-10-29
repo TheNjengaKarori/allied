@@ -1,29 +1,52 @@
 import 'package:allied/compare.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Property extends StatefulWidget {
+class Life extends StatefulWidget {
   @override
-  _PropertyState createState() => _PropertyState();
+  _LifeState createState() => _LifeState();
 }
 
-class _PropertyState extends State<Property> {
+class _LifeState extends State<Life> {
 
-  var _property =[ 
-    "Private",
-    "Commercial",
+  var _age =[ 
+    "25 years and below",
+    "26 - 30 years",
+    "31 - 35 years",
+    "35 - 40 years",
+    "Above 40 years",
+
+  ];
+
+  var _save =[ 
+    "2,000 - 5,000",
+    "5,000 - 10,000",
+    "5,000 - 10,000",
+    "10,000 - 20,000",
+    "over 20,000",
+  ];
+
+  var _live =[ 
+    "Nairobi",
+    "Mombasa",
+    "Kisumu",
+    "Thika",
+    "Nakuru",
+    "Naivasha",
+    "Eldoret",
+    "Kitale",
+    "Rest of Kenya",
   ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+     return Scaffold(
        backgroundColor:Colors.white,
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(
         backgroundColor:Colors.white,
-        title:Text('Property Insurance',
+        title:Text('Life Insurance',
         style: GoogleFonts.montserrat(
           color:Colors.blueAccent[400]
         ),
@@ -34,77 +57,71 @@ class _PropertyState extends State<Property> {
       body: ListView(
         padding: const EdgeInsets.all(40),
         children: [
-         Image.asset( 
-          'assets/home.png',
+        Image.asset( 
+          'assets/life.png',
           fit: BoxFit.cover,
         ),
-        Column(
-          children: [
-            FormBuilder( 
-           child: Column(children: [
-             FormBuilderDropdown(
-        attribute: 'property',
+        SizedBox(height:30),
+         FormBuilderDropdown(
+        attribute: 'Age',
+        decoration: InputDecoration(
+          icon:FaIcon(FontAwesomeIcons.baby,
+          color: Colors.blueAccent[400]
+          ),
+          labelText: 'Age',
+         labelStyle: GoogleFonts.montserrat(
+            color: Colors.blueAccent[400]
+          ),
+           hintText: "",
+           hintStyle: TextStyle( color:Colors.blueAccent[400].withOpacity(0.6),fontStyle: FontStyle.italic)
+        ),
+        
+        items: _age.map((_age) => DropdownMenuItem( 
+          value: _age,
+          child: Text('$_age'),
+        )).toList()
+        ),
+         SizedBox(height:30),
+         FormBuilderDropdown(
+        attribute: 'Savings',
+        decoration: InputDecoration(
+          icon:FaIcon(FontAwesomeIcons.piggyBank,
+          color: Colors.blueAccent[400]
+          ),
+          labelText: 'Your monthly savings?',
+         labelStyle: GoogleFonts.montserrat(
+            color: Colors.blueAccent[400]
+          ),
+           hintText: "",
+           hintStyle: TextStyle( color:Colors.blueAccent[400].withOpacity(0.6),fontStyle: FontStyle.italic)
+        ),
+        
+        items: _save.map((_save) => DropdownMenuItem( 
+          value: _save,
+          child: Text('$_save'),
+        )).toList()
+        ),
+         SizedBox(height:30),
+         FormBuilderDropdown(
+        attribute: 'live',
         decoration: InputDecoration(
           icon:FaIcon(FontAwesomeIcons.home,
           color: Colors.blueAccent[400]
           ),
-          labelText: 'Type of Property',
+          labelText: 'Where do you live?',
          labelStyle: GoogleFonts.montserrat(
             color: Colors.blueAccent[400]
           ),
-           hintText: "Private",
+           hintText: "",
            hintStyle: TextStyle( color:Colors.blueAccent[400].withOpacity(0.6),fontStyle: FontStyle.italic)
         ),
         
-        items: _property.map((_property) => DropdownMenuItem( 
-          value: _property,
-          child: Text('$_property'),
+        items: _live.map((_live) => DropdownMenuItem( 
+          value: _live,
+          child: Text('$_live'),
         )).toList()
         ),
-        SizedBox(height:40),
-         TextFormField(
-        decoration: InputDecoration(
-         icon:FaIcon(FontAwesomeIcons.dollarSign,
-          color: Colors.blueAccent[400]
-          ),
-          labelText: "Value of the property",
-          labelStyle: GoogleFonts.montserrat(
-            color: Colors.blueAccent[400]
-          ),
-          fillColor: Colors.blueAccent[400],
-          focusedBorder:OutlineInputBorder(
-            borderSide: const BorderSide(
-              color: Colors.blueAccent, 
-              width: 2.0),
-            borderRadius: BorderRadius.circular(25.0),
-          ),
-        ),
-         keyboardType:TextInputType.datetime,
-        inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-      ),
-      SizedBox(height:40),
-         TextFormField(
-        decoration: InputDecoration(
-         icon:FaIcon(FontAwesomeIcons.dollarSign,
-          color: Colors.blueAccent[400]
-          ),
-          labelText: "Value of the contents in the Property (TV,Furniture, jewelery,etc)",
-          labelStyle: GoogleFonts.montserrat(
-            color: Colors.blueAccent[400]
-          ),
-          fillColor: Colors.blueAccent[400],
-          focusedBorder:OutlineInputBorder(
-            borderSide: const BorderSide(
-              color: Colors.blueAccent, 
-              width: 2.0),
-            borderRadius: BorderRadius.circular(25.0),
-          ),
-        ),
-         keyboardType:TextInputType.datetime,
-        inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-      ),
-
-      SizedBox(height: 40,),
+        SizedBox(height: 40,),
     Center(
             child:ButtonTheme( 
               minWidth:110.0,
@@ -127,13 +144,9 @@ class _PropertyState extends State<Property> {
                 )),
               ),
             )
-          ) 
-           ],), 
-          )
-          ],
-          
-        )
+          ) ,
+          SizedBox(height:50),
       ],),
-    );
+     );
   }
 }

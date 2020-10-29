@@ -97,6 +97,7 @@ DateTime.now();
             color: Colors.blueAccent[400]
            )
           ),
+           SizedBox(height:15,),
            Container( 
              height: 150,
              child: CupertinoDatePicker(
@@ -117,6 +118,7 @@ DateTime.now();
             color: Colors.blueAccent[400]
            )
           ),
+           SizedBox(height:15,),
            Container( 
              height: 150,
              child: CupertinoDatePicker(
